@@ -13,17 +13,20 @@ each key whose value is another object.
 */
 
 function depthOfObject(obj) {
-    var depth = 0
-    for (key in obj) {
-      if (typeof obj[key] === 'object') {
-        var thisKeyDepth = depthOfObject(obj[key])
-        if (thisKeyDepth > depth) {
-          depth = thisKeyDepth
-        }
+  var depth = 0
+  if (typeof obj !== 'object' || Array.isArray(obj)) {
+    return 0
+  }
+  for (key in obj) {
+    if (typeof obj[key] === 'object') {
+      var thisKeyDepth = depthOfObject(obj[key])
+      if (thisKeyDepth > depth) {
+        depth = thisKeyDepth
       }
     }
-    return 1 + depth
   }
+  return 1 + depth
+}
   
   // Examples
   depthOfObject({foo: 'bar'}) // => 1
