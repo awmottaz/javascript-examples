@@ -1,2 +1,2 @@
 # javascript-examples
-Interesting examples in JavaScript
+Interesting (to me) examples in JavaScript
