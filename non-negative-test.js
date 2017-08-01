@@ -25,4 +25,4 @@ By skipping the variable assignment and using ES6 syntax, we can greatly
 reduce this function's footprint:
 */
 
-var isNonNegativeInt = arg => {return Math.abs(parseInt(arg, 10)) === Number(arg)}
+var isNonNegativeInt = arg => (Math.abs(parseInt(arg, 10)) === Number(arg))
