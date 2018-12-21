@@ -25,4 +25,18 @@ By skipping the variable assignment and using ES6 syntax, we can greatly
 reduce this function's footprint:
 */
 
-var isNonNegativeInt = arg => (Math.abs(parseInt(arg, 10)) === Number(arg))
+const nni = arg => (Math.abs(parseInt(arg, 10)) === Number(arg))
+
+// Each of these logs "true"
+console.log(nni(1))
+console.log(nni(42))
+console.log(nni(0))
+console.log(!nni(-1))
+console.log(!nni(3.14))
+console.log(!nni(true))
+console.log(!nni())
+console.log(!nni(null))
+console.log(!nni(() => { return 42 }))
+console.log(!nni(NaN))
+console.log(!nni([1, 2, 3]))
+console.log(!nni({ foo: 'bar' }))
